@@ -8,6 +8,10 @@ body{
 hr.q-divider{
   margin: 80px 0;
 }
+div {
+    -webkit-transition-delay: 2s; /* Safari */
+    transition-delay: 2s;
+}
 
 .exercise-container{
   font-size: 0;
