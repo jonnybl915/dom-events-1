@@ -34,6 +34,7 @@ button.addEventListener('click', hideOrShowNav);
 // TASK 2 -- Select an Icon
 
 var selectOrDeselect = function(iconList){
+
   if (iconList.currentTarget.classList.contains('selected')) {
     iconList.currentTarget.classList.remove('selected');
   } else {
@@ -48,6 +49,30 @@ for (var i = 0; i < iconList.length; i++) {
 
 // TASK 3 -- Move Item From List to List
 
+
+var allLisOnDom = document.querySelectorAll('li');
+var putLiOnTheOtherList = function(allLisOnDom) {
+
+var goodStandingUl = document.querySelector('.good-standing-list');
+var probationListUl = document.querySelector('.probation-list');
+
+    //removing the Li from the parent ul
+    var liToBeRemoved = allLisOnDom.currentTarget;
+
+    if (liToBeRemoved.parentNode.classList.contains('good-standing-list')) {
+      //console.log("li to be removed: ", liToBeRemoved);
+      var ulFromWhichTheLiIsToBeRemoved = liToBeRemoved.parentNode;
+      //console.log("ul from which the li is to be removed: ",ulFromWhichTheLiIsToBeRemoved);
+      ulFromWhichTheLiIsToBeRemoved.removeChild(liToBeRemoved);
+      probationListUl.appendChild(liToBeRemoved);
+    } else {
+      goodStandingUl.appendChild(liToBeRemoved);
+    }
+}
+console.log(allLisOnDom);
+for (var i = 0; i < allLisOnDom.length; i++) {
+  allLisOnDom[i].addEventListener('click', putLiOnTheOtherList)
+}
 // TASK 4 -- Add Guest to List
 
 // TASK 5 -- (Adventure Mode)-- Add + Remove Item From List
