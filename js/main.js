@@ -26,7 +26,7 @@ var hideOrShowNav = function() {
         navMenu.style.visibility = "visible";
     }
 }
-console.log('-------------------------');
+//console.log('-------------------------');
 
 button.addEventListener('click', hideOrShowNav);
 
@@ -69,10 +69,29 @@ var probationListUl = document.querySelector('.probation-list');
       goodStandingUl.appendChild(liToBeRemoved);
     }
 }
-console.log(allLisOnDom);
+//console.log(allLisOnDom);
 for (var i = 0; i < allLisOnDom.length; i++) {
   allLisOnDom[i].addEventListener('click', putLiOnTheOtherList)
 }
+
+
 // TASK 4 -- Add Guest to List
+// key item for enter is 13:
+var liWhichIsUselessExceptToGrabParent = document.querySelector('.guests');
+console.log(liWhichIsUselessExceptToGrabParent);
+var parentNodeUl = liWhichIsUselessExceptToGrabParent.parentNode;
+console.log(parentNodeUl);
+var inputText = document.getElementById('input-field');
+  var addGuest = function(inputText) {
+     if (keyCode = 13) {
+        var guestLi = "<li>" + inputText + "<li>";
+        parentNodeUl.appendChild(guestLi);
+        return parentNodeUl;
+      }
+}
+
+inputText.addEventListener('keydown', addGuest());
+
+
 
 // TASK 5 -- (Adventure Mode)-- Add + Remove Item From List
