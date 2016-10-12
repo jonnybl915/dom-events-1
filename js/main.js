@@ -77,20 +77,38 @@ for (var i = 0; i < allLisOnDom.length; i++) {
 
 // TASK 4 -- Add Guest to List
 // key item for enter is 13:
-var liWhichIsUselessExceptToGrabParent = document.querySelector('.guests');
-console.log(liWhichIsUselessExceptToGrabParent);
-var parentNodeUl = liWhichIsUselessExceptToGrabParent.parentNode;
-console.log(parentNodeUl);
+
+// var liWhichIsUselessExceptToGrabParent = document.querySelector('.guests');
+// console.log(liWhichIsUselessExceptToGrabParent);
+// var parentNodeUl = liWhichIsUselessExceptToGrabParent.parentNode;
+// console.log(parentNodeUl);
+// var inputText = document.getElementById('input-field').value;
+//   var addGuest = function(inputText) {
+//      if (keyCode = 13) {
+//         var guestLi = "<li>" + inputText + "<li>";
+//         parentNodeUl.appendChild(guestLi);
+//         return parentNodeUl;
+//       }
+// }
 var inputText = document.getElementById('input-field');
-  var addGuest = function(inputText) {
-     if (keyCode = 13) {
-        var guestLi = "<li>" + inputText + "<li>";
-        parentNodeUl.appendChild(guestLi);
-        return parentNodeUl;
-      }
+//console.log("input text: ",inputText);
+var guestList = document.querySelector('.guest-list');
+//console.log(guestList);
+var uselessLi = document.querySelector('.guests');
+//console.log(uselessLi);
+var guestListAsUl = uselessLi.parentNode;
+//console.log(guestListAsUl);
+var addGuest = function(str) {
+
+    var strAsLi = "<li>" + str + "<li>";
+    guestList.appendChild(strAsLi);
+    console.log(guestList);
+
+    return guestList;
+
 }
 
-inputText.addEventListener('keydown', addGuest());
+guestList.addEventListener("keydown", addGuest);
 
 
 
