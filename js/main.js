@@ -101,6 +101,7 @@ var guestListAsUl = uselessLi.parentNode;
 var addGuest = function(str) {
 
     var strAsLi = "<li>" + str + "<li>";
+
     guestList.appendChild(strAsLi);
     console.log(guestList);
 
@@ -109,7 +110,7 @@ var addGuest = function(str) {
 }
 
 guestList.addEventListener("keydown", addGuest);
-
-
-
+// 
+//
+//
 // TASK 5 -- (Adventure Mode)-- Add + Remove Item From List
