@@ -99,7 +99,7 @@ div {
   background: beige;
   padding: 15px;
   text-align: center;
-  transition: 1s opacity ease;
+  transition: .5s opacity ease;
 }
 
 .nav-menu-hidden {

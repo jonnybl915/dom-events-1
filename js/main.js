@@ -13,7 +13,7 @@ var hideOrShowNav = function() {
             button.innerHTML = "Hide Nav";
         }
         var navMenu = document.querySelector('.nav-menu');
-        console.log([navMenu]);
+        // console.log([navMenu]);
         var navMenuStyles = window.getComputedStyle(navMenu);
         //console.log(navMenuStyles);
         console.log('---------------------------------');
@@ -21,9 +21,11 @@ var hideOrShowNav = function() {
         console.log([navMenuStyles]);
 
         if (navMenuStyles.visibility === "visible") {
-            navMenu.style.visibility = "hidden";
+
+            navMenu.classList.add("nav-menu-hidden")
         } else {
-            navMenu.style.visibility = "visible";
+
+            navMenu.classList.remove('nav-menu-hidden')
         }
     }
     //console.log('-------------------------');
@@ -50,8 +52,8 @@ for (var i = 0; i < iconList.length; i++) {
 // TASK 3 -- Move Item From List to List
 
 
-        var allLisOnDom = document.querySelectorAll('li');
-        var putLiOnTheOtherList = function(allLisOnDom) {
+var allLisOnDom = document.querySelectorAll('li');
+var putLiOnTheOtherList = function(allLisOnDom) {
 
         var goodStandingUl = document.querySelector('.good-standing-list');
         var probationListUl = document.querySelector('.probation-list');
@@ -74,18 +76,39 @@ for (var i = 0; i < iconList.length; i++) {
 for (var i = 0; i < allLisOnDom.length; i++) {
     allLisOnDom[i].addEventListener('click', putLiOnTheOtherList)
 }
-// TASK 4 -- Add Guest to List
-// key item for enter is 13:
+
+
+              // TASK 4 -- Add Guest to List
+              // key item for enter is 13:
 
 
 
-var theGuestList = document.querySelector('.guest-list');
-var addGuest = function(inputText) {
+    var theGuestList = document.querySelector('.guest-list');
+    var inputText = document.querySelector('#input-field');
+    //console.log(inputText);
 
-}
-theGuestList.addEventListener('keydown', addGuest())
+    var addGuest = function() {
+          //append children
+          var variableToBeAdded = '';
+          var textContent = inputText.value;
+          console.log(textContent);
+          variableToBeAdded += "<li>" + textContent + "<li>";
 
+          //console.log(variableToBeAdded);
+          textContent.innerHTML += variableToBeAdded;
+          console.log(textContent);
+          theGuestList.innerHTML += textContent;
+        //  console.log(theGuestList);
+          //theGuestList.appendChild(variableToBeAdded);
+          //console.log(textContent);
 
+    }
+
+     inputText.addEventListener('keydown', function(event){
+      if (event.keyCode === 13) {
+        addGuest();
+      }
+     })
 
 
 
